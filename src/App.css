@@ -1,0 +1,187 @@
+/* -------------------- Base Styles -------------------- */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8fafc;
+  color: #4a4a4a;
+}
+
+/* -------------------- Dashboard Layout -------------------- */
+.dashboard {
+  padding: 24px 32px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.dashboard-header h2 {
+  font-size: 28px;
+  margin: 0;
+  color: #3e4c59;
+}
+
+.dashboard-header select,
+.add-widget {
+  padding: 10px 14px;
+  font-size: 14px;
+  margin-left: 12px;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  background-color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dashboard-header select:hover,
+.add-widget:hover {
+  background-color: #f1f5f8;
+}
+
+/* -------------------- Grid Layout -------------------- */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* -------------------- Card Component -------------------- */
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 18px 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  position: relative;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  font-size: 18px;
+  margin: 0 0 10px 0;
+  color: #2d3e50;
+}
+
+.card-content select {
+  margin-top: 12px;
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #d0d7de;
+}
+
+/* -------------------- Remove Button -------------------- */
+.remove-widget {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  color: #aaa;
+  transition: color 0.2s ease;
+}
+
+.remove-widget:hover {
+  color: #e67e22;
+}
+
+/* -------------------- ChartCircle -------------------- */
+.circle-chart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.circular-chart {
+  width: 90px;
+  height: 90px;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #e1e8f0;
+  stroke-width: 3.8;
+}
+
+.circle {
+  fill: none;
+  stroke: #3498db;
+  stroke-width: 3.8;
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.3s ease;
+}
+
+/* Green Circle */
+.circle.green {
+  stroke: #27ae60;
+}
+
+/* Red Circle */
+.circle.red {
+  stroke: #e74c3c;
+}
+
+/* Yellow Circle */
+.circle.yellow {
+  stroke: #f1c40f;
+}
+
+.percentage {
+  fill: #3e4c59;
+  font-size: 0.45em;
+  text-anchor: middle;
+}
+
+/* -------------------- List Styling -------------------- */
+.card-content ul {
+  padding: 0;
+  list-style: none;
+  margin: 12px 0 0 0;
+}
+
+.card-content ul li {
+  margin-bottom: 6px;
+  padding-left: 10px;
+  position: relative;
+}
+
+.card-content ul li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #9b59b6;
+}
+
+/* -------------------- Transitions -------------------- */
+.card,
+select,
+button {
+  transition: all 0.3s ease-in-out;
+}
+
+/* -------------------- Responsive -------------------- */
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .dashboard-header select,
+  .add-widget {
+    margin-left: 0;
+  }
+}
